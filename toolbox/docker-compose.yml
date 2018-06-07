@@ -1,0 +1,8 @@
+version: '2.1'
+
+services:
+  demos:
+    image: demos
+    build: .
+    ports:
+      - 22:22
