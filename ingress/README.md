@@ -1,9 +1,8 @@
 # Introduction
 This toturial was inspired by the [Nginx Ingress Demo](https://github.com/nginxinc/kubernetes-ingress/tree/master/examples/complete-example).
 
-In this excersise we depoly NGINX Contoller, expose it to the public using Azure Loadbalancer. then we deploy a simple web applicatio and then configure load balancing for that application using the Ingress resource.
+In this excersise we depoly NGINX Contoller, expose it to the public using Azure Load Balancer. after this we deploy a simple web application and then configure load balancing for that application using the Ingress resource.
 
-## Running the Example
 ## 1. Deploy the Ingress Controller
 Deploy the default server secret
 ```
@@ -31,16 +30,16 @@ ingreeEIP=W.X.Y.Z
 ## 2. Deploy the Cafe Application
 Create the coffee and the tea deployments and services:
 ```
-kubectl create -f cafe.yaml
+kubectl apply -f cafe.yaml
 ```
 ## 3. Configure Load Balancing
 Create a secret with an SSL certificate and a key:
 ```
-kubectl create -f cafe-secret.yaml
+kubectl apply -f cafe-secret.yaml
 ```
 Create an Ingress resource:
 ```
-kubectl create -f cafe-ingress.yaml
+kubectl apply -f cafe-ingress.yaml
 ```
 ## 4. Test the Application
 If you are using Azure DNS, you need to configure an A record in your example.com domain
